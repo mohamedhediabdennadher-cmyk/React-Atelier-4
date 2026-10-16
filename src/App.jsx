@@ -1,16 +1,19 @@
-import PanneauAccueil from './PanneauAccueil';
-import SuiviCommandes from './SuiviCommandes';
-import CommandeVirtuelle from './CommandeVirtuelle';
+import Card from "./components/Card";
+import { WondersArr } from "./Data";
+//import Login from "./components/Login";
 
 function App() {
   return (
-    <div>
-      <PanneauAccueil/>
-      <SuiviCommandes/>
-      <CommandeVirtuelle numero="CMD-1042"/>
-      <CommandeVirtuelle numero="CMD-1043"/>
-      <CommandeVirtuelle numero="CMD-1043"/>
+  <div className="container my-4">
+    <h1 className="text-center mb-4">NATURAL WONDERS</h1>
+    <div className="row row-cols-1 row-cols-md-3 g-4">
+      {WondersArr.map((wonder) => (
+      <Card key={wonder.id} wonder={wonder} />
+      ))}
     </div>
+    {/* <Login /> */}
+  </div>
+
   );
 }
 
